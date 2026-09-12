@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Base64 Encoder / Decoder – No Signup</title>
+<meta name="description" content="Free client-side Base64 encode and decode. No signup, no upload, runs in your browser.">
+<meta property="og:title" content="Free Base64 Encoder / Decoder">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow">
+</head>
+<body>
+<main>
+<h1>Free Base64 Encoder / Decoder</h1>
+<p>Runs 100% in your browser. <span>Views: <b id="views">…</b></span> · <a href="https://atomic-device-2a9g6gs.shipstatic.com">JSON Formatter</a></p>
+<textarea id="in" rows="8" cols="60" placeholder="hello world"></textarea><br>
+<button onclick="document.getElementById('out').textContent=btoa(unescape(encodeURIComponent(document.getElementById('in').value)))">Encode</button>
+<button onclick="try{document.getElementById('out').textContent=decodeURIComponent(escape(atob(document.getElementById('in').value.trim())))}catch(e){document.getElementById('out').textContent='Invalid: '+e}">Decode</button>
+<pre id="out"></pre>
+<script>
+fetch('https://abacus.jasoncameron.dev/hit/fractal-json-tool-v1/b64')
+.then(r=>r.json()).then(d=>{document.getElementById('views').textContent=d.value})
+.catch(()=>{document.getElementById('views').textContent='n/a'});
+</script>
+</main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free JSON Formatter – No Signup, No Upload</title>
+<meta name="description" content="Free client-side JSON formatter and validator. Paste JSON, format instantly. No signup, no upload, secrets stay local. Includes jq cheatsheet.">
+<meta property="og:title" content="Free JSON Formatter – No Signup">
+<meta property="og:description" content="Paste JSON, format instantly in your browser. Nothing leaves your machine.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Free JSON Formatter","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0"},"description":"Client-side JSON formatter, no upload."}</script>
+</head>
+<body>
+<main>
+<h1>Free JSON Formatter – No Signup, No Upload</h1>
+<p>Paste JSON, format instantly in your browser. Nothing leaves your machine. <span>Views: <b id="views">…</b></span> · <a href="/mirrors.html">Mirrors</a></p>
+<textarea id="in" rows="10" cols="60" placeholder='{"hello":"world"}'></textarea>
+<br>
+<button onclick="try{document.getElementById('out').textContent=JSON.stringify(JSON.parse(document.getElementById('in').value),null,2)}catch(e){document.getElementById('out').textContent='Invalid: '+e}">Format</button>
+<pre id="out"></pre>
+<h2>How to format large JSON without uploading</h2>
+<p>Keep secrets local: use this page for &lt;1MB, <code>jq . data.json</code> or <code>python3 -m json.tool data.json</code> for large files. Validate with <code>jq empty data.json &amp;&amp; echo OK</code>.</p>
+<h2>jq vs browser cheatsheet</h2>
+<ul><li>Small: this page (client-side).</li><li>Large: <code>jq</code>.</li><li>Never paste secrets into server-side formatters.</li></ul>
+<script>
+fetch('https://abacus.jasoncameron.dev/hit/fractal-json-tool-v1/home')
+.then(r=>r.json()).then(d=>{document.getElementById('views').textContent=d.value})
+.catch(()=>{document.getElementById('views').textContent='n/a'});
+</script>
+</main>
+</body>
+</html>
