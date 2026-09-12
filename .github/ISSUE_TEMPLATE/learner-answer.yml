@@ -1,0 +1,39 @@
+name: Learner answer (3 questions)
+description: Answer the 3 questions at the end of a lesson. No secrets.
+title: "learner-answer: "
+labels: ["learner-answer"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Answer 3 short questions so we can build your path.
+        WARNING: never paste tokens, passwords, API keys, or personal data.
+        Use redacted examples only.
+  - type: textarea
+    id: goal
+    attributes:
+      label: "1. What job are you trying to get done?"
+      placeholder: "e.g. read a 200KB API dump that may contain a token"
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: "2. How do you format/validate JSON today?"
+      placeholder: "e.g. paste into a random online formatter; never used jq"
+    validations:
+      required: true
+  - type: textarea
+    id: stuck
+    attributes:
+      label: "3. Where do you get stuck?"
+      placeholder: "e.g. 'Unexpected token' errors; afraid of leaking secrets"
+    validations:
+      required: true
+  - type: checkboxes
+    id: nosecrets
+    attributes:
+      label: Safety
+      options:
+        - label: "My answer contains NO secrets, tokens, or personal data"
+          required: true

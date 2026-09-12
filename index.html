@@ -14,7 +14,7 @@
 <body>
 <main>
 <h1>Free JSON Formatter – No Signup, No Upload</h1>
-<p>Paste JSON, format instantly in your browser. Nothing leaves your machine. <span>Views: <b id="views">…</b></span> · <a href="/mirrors.html">Mirrors</a></p>
+<p>Paste JSON, format instantly in your browser. Nothing leaves your machine. <span>Views: <b id="views">…</b></span> · <a href="/mirrors.html">Mirrors</a> · <a href="/lessons/format-validate-json-without-leaking-secrets.html"><strong>Lesson: format &amp; validate without leaking secrets (15 min)</strong></a></p>
 <textarea id="in" rows="10" cols="60" placeholder='{"hello":"world"}'></textarea>
 <br>
 <button onclick="try{document.getElementById('out').textContent=JSON.stringify(JSON.parse(document.getElementById('in').value),null,2)}catch(e){document.getElementById('out').textContent='Invalid: '+e}">Format</button>
